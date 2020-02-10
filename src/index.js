@@ -14,6 +14,6 @@ app.use(require('./routes/personas'));
 app.use(require('./routes/vehiculos'));
 app.use(require('./routes/sectores'));
 app.use(require('./routes/turnos'));
-app.listen(3000, ()=>{
+app.listen(app.get('port'), ()=>{
     console.log('server on port ',app.get('port'));
 })
