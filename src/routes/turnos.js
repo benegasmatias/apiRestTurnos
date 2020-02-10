@@ -16,7 +16,7 @@ router.get('/turnos/disponibles/:sector', (req,res) => {
 });
 
 
-router.post('/turnos/add/', (req /*entrada*/ , res/*salida*/)=>{
+router.post('/turnos/add', (req /*entrada*/ , res/*salida*/)=>{
     const {id, dataTime, sector_id, disponible, entregado} = req.body;//que es el objeto que manda el usuario 
     const query="SET @p0=?; SET @p1=?; SET @p2=?; SET @p3=?; SET @p4=?;  CALL `TurnosDisponibleAddOfEdit`(@p0, @p1, @p2, @p3, @p4);";//la consulta que llama al procedimiento almacenado
     mysqlConection.query(query,[id, dataTime, sector_id, disponible, entregado],(err,rows,fields)=>{ /* (err,rows,fields) esto es lo que podemos obtener*/
