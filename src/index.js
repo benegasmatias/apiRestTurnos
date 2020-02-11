@@ -4,7 +4,7 @@ const app=express();
 const cors = require('cors');
 //SETTING
 app.set('port',process.env.PORT||3000);
-app.use(compression());
+
 //middlewares
 
 app.use(express.json());//se puede accceder a la infromacion gracias a esta linea de codigo
